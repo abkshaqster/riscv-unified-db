@@ -139,5 +139,6 @@ namespace udb {
     {
       s.sync_write_after_read_device(true, static_cast<uint32_t>(0))
     };
+    { s.read_entropy() } -> std::same_as<uint16_t>;
   };
 }  // namespace udb

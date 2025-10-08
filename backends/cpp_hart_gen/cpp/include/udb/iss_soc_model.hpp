@@ -355,6 +355,9 @@ namespace udb {
     void sync_read_after_write_device(bool, uint32_t) {}
 
     void sync_write_after_read_device(bool, uint32_t) {}
+    uint16_t read_entropy() {
+      return (uint16_t)(rand() & 0xffff);
+    }
 
    private:
     DenseMemory m_memory;
