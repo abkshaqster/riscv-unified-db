@@ -484,6 +484,9 @@ namespace :test do
     ]
     rv64ufTests = rv32ufTests
 
+    rv64zbbTests = ["andn", "clz", "clzw", "cpop", "cpopw", "ctz", "ctzw", "max", "maxu", "min", "minu", "orc_b", "orn", "rev8", "rol", "rolw", "ror", "rori", "roriw", "rorw", "sext_v", "sext_h", "xnor", "zext_h"]
+
+
     # compressed tests same for rv32 as rv64
     ucTests = ["rvc"]
 
@@ -494,12 +497,14 @@ namespace :test do
       uiTests = rv64uiTests
       umTests = rv64umTests
       siTests = rv64siTests
+      zbbTests = rv64zbbTests
       ufTests = rv64ufTests
     else
       uiTests = rv32uiTests
       umTests = rv32umTests
       siTests = rv32siTests
       ufTests = rv32ufTests
+      zbbTests = []
     end
 
     uiTests.each do |t|
@@ -534,6 +539,13 @@ namespace :test do
       run_test(
         "#{CPP_HART_GEN_DST}/#{build_name}/build/iss -m #{configs_name[0]} -c #{$root}/cfgs/#{configs_name[0]}-riscv-tests.yaml ext/riscv-tests/isa/#{configs_name[0]}uf-p-#{t}",
         "#{configs_name[0]}uf-p-#{t}"
+      )
+    end
+
+    zbbTests.each do |t|
+      run_test(
+        "#{CPP_HART_GEN_DST}/#{build_name}/build/iss -m #{configs_name[0]} -c #{$root}/cfgs/#{configs_name[0]}-riscv-tests.yaml ext/riscv-tests/isa/#{configs_name[0]}uzbb-p-#{t}",
+        "#{configs_name[0]}uzbb-p-#{t}"
       )
     end
   end
