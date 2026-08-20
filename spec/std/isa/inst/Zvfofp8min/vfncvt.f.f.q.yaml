@@ -4,7 +4,7 @@
 $schema: "inst_schema.json#"
 kind: instruction
 name: vfncvt.f.f.q
-long_name: Vector floating-point quad-narrowing conversion to OFP8
+long_name: Vector floating-point FP32 conversion to OFP8
 description: |
   Converts FP32 floating-point elements in vector register vs2 to OFP8
   elements and stores the results in vector register vd according to mask vm.
