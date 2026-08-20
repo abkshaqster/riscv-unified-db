@@ -43962,7 +43962,7 @@ Included in::
 == vfncvt.f.f.q
 
 Synopsis::
-Vector floating-point quad-narrowing conversion to OFP8
+Vector floating-point FP32 conversion to OFP8
 
 Base::
 
@@ -44328,7 +44328,7 @@ Included in::
 == vfncvt.sat.f.f.q
 
 Synopsis::
-Vector saturating quad-narrowing conversion to OFP8
+Vector floating-point FP32 saturating conversion to OFP8
 
 Base::
 
