@@ -1,0 +1,24 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+# yaml-language-server: $schema=../../../schemas/ext_schema.json
+$schema: "ext_schema.json#"
+kind: extension
+name: Zvfbfa
+long_name: Vector Extension for Additional BF16 Computation
+type: unprivileged
+description: |
+ The Zvfbfa extension adds more complete BF16 vector compute support.
+ Zvfbfa adds a 1-bit field, altfmt, to the vtype CSR in bit position 8.
+ Attempting to set altfmt=1 and SEW >= 32 is reserved.
+ Zvfbfa is compatible with, but does not require, Zvfbfwma and Zvfbfmin.
+versions:
+ - version: "0.1.0"
+   state: development
+   repositories:
+     - url: https://github.com/riscv/riscv-isa-manual
+       branch: zvfbfa
+requirements:
+ extension:
+   allOf:
+     - name: Zve32f
+     - name: Zfbfmin
