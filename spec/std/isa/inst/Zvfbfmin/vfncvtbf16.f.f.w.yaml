@@ -14,6 +14,7 @@ definedBy:
     anyOf:
       - name: Zvfbfmin
       - name: Zvfofp8min
+      - name: Zvfbfa
 assembly: vd, vs2, vm
 encoding:
   match: 010010------11101001-----1010111
