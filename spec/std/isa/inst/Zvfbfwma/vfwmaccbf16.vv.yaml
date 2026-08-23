@@ -11,9 +11,7 @@ description: |
   Performs a BFloat16 multiply-accumulate operation on each element in vector register vs2 with the corresponding element in vector register vs1, accumulating results in vector register vd according to mask vm. This is a widening operation that produces single-precision results.
 definedBy:
   extension:
-    anyOf:
-      - name: Zvfbfwma
-      - name: Zvfbfa
+    name: Zvfbfwma
 assembly: vd, vs1, vs2, vm
 encoding:
   match: 111011-----------001-----1010111
