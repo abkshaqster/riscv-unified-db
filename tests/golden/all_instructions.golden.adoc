@@ -46630,10 +46630,15 @@ Decode Variables::
 Included in::
 
 
-This instruction requires the following:
+[width="100%",cols="1,2",options="header"]
+|===
+| Extension | Version
 
-xref:exts:Zvfbfwma.adoc#udb:doc:ext:Zvfbfwma[Zvfbfwma]
-xref:exts:Zvfbfa.adoc#udb:doc:ext:Zvfbfa[Zvfbfa]
+| *Zvfbfwma*
+| any
+|===
+
+
 
 
 [#udb:doc:inst:vfwmaccbf16_vv]
@@ -46678,10 +46683,15 @@ Decode Variables::
 Included in::
 
 
-This instruction requires the following:
+[width="100%",cols="1,2",options="header"]
+|===
+| Extension | Version
 
-xref:exts:Zvfbfwma.adoc#udb:doc:ext:Zvfbfwma[Zvfbfwma]
-xref:exts:Zvfbfa.adoc#udb:doc:ext:Zvfbfa[Zvfbfa]
+| *Zvfbfwma*
+| any
+|===
+
+
 
 
 [#udb:doc:inst:vfwmsac_vf]
