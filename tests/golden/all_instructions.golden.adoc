@@ -44415,15 +44415,10 @@ Decode Variables::
 Included in::
 
 
-[width="100%",cols="1,2",options="header"]
-|===
-| Extension | Version
+This instruction requires the following:
 
-| *Zvfbfmin*
-| any
-|===
-
-
+xref:exts:Zvfbfmin.adoc#udb:doc:ext:Zvfbfmin[Zvfbfmin]
+xref:exts:Zvfbfa.adoc#udb:doc:ext:Zvfbfa[Zvfbfa]
 
 
 [#udb:doc:inst:vfnmacc_vf]
@@ -46471,15 +46466,10 @@ Decode Variables::
 Included in::
 
 
-[width="100%",cols="1,2",options="header"]
-|===
-| Extension | Version
+This instruction requires the following:
 
-| *Zvfbfmin*
-| any
-|===
-
-
+xref:exts:Zvfbfmin.adoc#udb:doc:ext:Zvfbfmin[Zvfbfmin]
+xref:exts:Zvfbfa.adoc#udb:doc:ext:Zvfbfa[Zvfbfa]
 
 
 [#udb:doc:inst:vfwmacc_vf]
