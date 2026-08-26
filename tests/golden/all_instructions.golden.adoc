@@ -14358,7 +14358,7 @@ RV64::
 ....
 
 Description::
-Stores a 64-bit value in register rs2 to memory.
+Stores a 64-bit value in register xs2 to memory.
 It computes an effective address by adding the zero-extended offset, scaled by 8,
 to the stack pointer, x2.
 It expands to xref:insts:sd.adoc#udb:doc:inst:sd[sd] `xs2, offset(x2)`.
@@ -27873,8 +27873,8 @@ Included in::
 
 This instruction requires the following:
 
-xref:exts:I.adoc#udb:doc:ext:I[I]
-xref:exts:Zilsd.adoc#udb:doc:ext:Zilsd[Zilsd]
+++(++xlen+++()+++ == 64 && xref:exts:I.adoc#udb:doc:ext:I[I])
+++(++xlen+++()+++ == 32 && xref:exts:Zilsd.adoc#udb:doc:ext:Zilsd[Zilsd])
 
 
 [#udb:doc:inst:ld_aq]
@@ -36121,8 +36121,8 @@ Included in::
 
 This instruction requires the following:
 
-xref:exts:I.adoc#udb:doc:ext:I[I]
-xref:exts:Zilsd.adoc#udb:doc:ext:Zilsd[Zilsd]
+++(++xlen+++()+++ == 64 && xref:exts:I.adoc#udb:doc:ext:I[I])
+++(++xlen+++()+++ == 32 && xref:exts:Zilsd.adoc#udb:doc:ext:Zilsd[Zilsd])
 
 
 [#udb:doc:inst:sd_aqrl]
