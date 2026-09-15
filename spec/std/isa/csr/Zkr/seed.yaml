@@ -66,5 +66,5 @@ sw_read(): |
     }
   }
 
-    # The entropy source always reports ES16 with freshly polled entropy.
-    return {2'b10, 14'd0, read_entropy()};
+    # A single poll returns both the status and the entropy it goes with.
+    return read_seed();
