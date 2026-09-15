@@ -46,6 +46,8 @@ fields:
     reset_value: 0
 sw_read(): |
   # CSRRS/CSRRC/CSRRSI/CSRRCI are the CSR instructions with funct3[1] set.
+  # Bits 19:15 hold rs1 for the register forms and uimm for the immediate
+  # forms, so a single zero check covers rs1 == x0 and uimm == 0.
   Boolean read_only_access = ($encoding[13] == 1'b1) && ($encoding[19:15] == 5'b00000);
 
   if (read_only_access) {
@@ -64,4 +66,5 @@ sw_read(): |
     }
   }
 
-  return $bits(CSR[seed]);
+    # The entropy source always reports ES16 with freshly polled entropy.
+    return {2'b10, 14'd0, read_entropy()};
