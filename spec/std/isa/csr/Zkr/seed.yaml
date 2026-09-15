@@ -33,21 +33,8 @@ fields:
       * 1 - WAIT
       * 2 - ES16
       * 3 - DEAD
-    type: RW-H
-    reset_value: UNDEFINED_LEGAL
-    sw_write(csr_value): |
-      if (mode() == PrivilegeMode::U && CSR[mseccfg].USEED == 1'b0) {
-        raise(ExceptionCode::IllegalInstruction, mode(), $encoding);
-      } else if (mode() == PrivilegeMode::S && CSR[mseccfg].SSEED == 1'b0) {
-        raise(ExceptionCode::IllegalInstruction, mode(), $encoding);
-      } else if (mode() == PrivilegeMode::VS || mode() == PrivilegeMode::VU) {
-        if (CSR[mseccfg].SSEED == 1'b1) {
-          raise(ExceptionCode::VirtualInstruction, mode(), $encoding);
-        } else {
-          raise(ExceptionCode::IllegalInstruction, mode(), $encoding);
-        }
-      }
-      return CSR[seed].OPST; # TODO: Implement OPST as a builtin?
+    type: RO-H
+    reset_value: 0
   ENTROPY:
     location: 15-0
     description: |
@@ -55,21 +42,8 @@ fields:
 
       This field is valid only when `OPST` is ES16. When `OPST` is not ES16,
       `ENTROPY` must be zero.
-    type: RW-H
-    reset_value: UNDEFINED_LEGAL
-    sw_write(csr_value): |
-      if (mode() == PrivilegeMode::U && CSR[mseccfg].USEED == 1'b0) {
-        raise(ExceptionCode::IllegalInstruction, mode(), $encoding);
-      } else if (mode() == PrivilegeMode::S && CSR[mseccfg].SSEED == 1'b0) {
-        raise(ExceptionCode::IllegalInstruction, mode(), $encoding);
-      } else if (mode() == PrivilegeMode::VS || mode() == PrivilegeMode::VU) {
-        if (CSR[mseccfg].SSEED == 1'b1) {
-          raise(ExceptionCode::VirtualInstruction, mode(), $encoding);
-        } else {
-          raise(ExceptionCode::IllegalInstruction, mode(), $encoding);
-        }
-      }
-      return CSR[seed].ENTROPY; # TODO: Implement ENTROPY as a builtin?
+    type: RO-H
+    reset_value: 0
 sw_read(): |
   # CSRRS/CSRRC/CSRRSI/CSRRCI are the CSR instructions with funct3[1] set.
   Boolean read_only_access = ($encoding[13] == 1'b1) && ($encoding[19:15] == 5'b00000);
